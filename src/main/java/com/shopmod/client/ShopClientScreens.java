@@ -79,11 +79,11 @@ public final class ShopClientScreens {
             int inputCount = parseAmount(inputAmount.getValue());
             int outputCount = parseAmount(outputAmount.getValue());
             boolean validPassword = !password.getValue().isBlank();
-            inputId.setTextColor(validInput ? 0xFFE0E0E0 : 0xFFFF5555);
-            outputId.setTextColor(validOutput ? 0xFFE0E0E0 : 0xFFFF5555);
-            inputAmount.setTextColor(inputCount > 0 ? 0xFFE0E0E0 : 0xFFFF5555);
-            outputAmount.setTextColor(outputCount > 0 ? 0xFFE0E0E0 : 0xFFFF5555);
-            password.setTextColor(validPassword ? 0xFFE0E0E0 : 0xFFFF5555);
+            inputId.setTextColor(validInput ? 0xE0E0E0 : 0xFF5555);
+            outputId.setTextColor(validOutput ? 0xE0E0E0 : 0xFF5555);
+            inputAmount.setTextColor(inputCount > 0 ? 0xE0E0E0 : 0xFF5555);
+            outputAmount.setTextColor(outputCount > 0 ? 0xE0E0E0 : 0xFF5555);
+            password.setTextColor(validPassword ? 0xE0E0E0 : 0xFF5555);
             this.confirm.active = validInput && validOutput && inputCount > 0 && outputCount > 0 && validPassword;
             if (!validInput || !validOutput) {
                 validationMessage = "Invalid item ID. Use a real namespaced ID like minecraft:diamond.";
@@ -124,13 +124,13 @@ public final class ShopClientScreens {
         public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
             super.extractRenderState(graphics, mouseX, mouseY, partialTick);
             int left = this.width / 2 - 130;
-            graphics.centeredText(this.font, this.title, this.width / 2, 22, 0xFFFFFFFF);
-            graphics.text(this.font, "Payment item ID", left, 36, 0xFFA0A0A0);
-            graphics.text(this.font, "Pay amount", left + 170, 36, 0xFFA0A0A0);
-            graphics.text(this.font, "Output item ID", left, 78, 0xFFA0A0A0);
-            graphics.text(this.font, "Output amount", left + 170, 78, 0xFFA0A0A0);
-            graphics.text(this.font, "Chest key password", left, 120, 0xFFA0A0A0);
-            graphics.text(this.font, validationMessage, left, 158, 0xFFFFFF55);
+            graphics.centeredText(this.font, this.title, this.width / 2, 22, 0xFFFFFF);
+            graphics.text(this.font, "Payment item ID", left, 36, 0xA0A0A0);
+            graphics.text(this.font, "Pay amount", left + 170, 36, 0xA0A0A0);
+            graphics.text(this.font, "Output item ID", left, 78, 0xA0A0A0);
+            graphics.text(this.font, "Output amount", left + 170, 78, 0xA0A0A0);
+            graphics.text(this.font, "Chest key password", left, 120, 0xA0A0A0);
+            graphics.text(this.font, validationMessage, left, 158, 0xFFFF55);
         }
     }
 
@@ -158,9 +158,9 @@ public final class ShopClientScreens {
             super.extractRenderState(graphics, mouseX, mouseY, partialTick);
             int left = this.width / 2 - 130;
             int y = this.height / 2 - 50;
-            graphics.centeredText(this.font, this.title, this.width / 2, y - 28, 0xFFFFFFFF);
-            graphics.text(this.font, "You pay: " + payload.inputAmount() + " x " + payload.inputItemId(), left, y, 0xFFFFFFFF);
-            graphics.text(this.font, "You receive: " + payload.outputAmount() + " x " + payload.outputItemId(), left, y + 22, 0xFFFFFFFF);
+            graphics.centeredText(this.font, this.title, this.width / 2, y - 28, 0xFFFFFF);
+            graphics.text(this.font, "You pay: " + payload.inputAmount() + " x " + payload.inputItemId(), left, y, 0xFFFFFF);
+            graphics.text(this.font, "You receive: " + payload.outputAmount() + " x " + payload.outputItemId(), left, y + 22, 0xFFFFFF);
         }
     }
 }
